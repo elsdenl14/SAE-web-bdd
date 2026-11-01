@@ -1,0 +1,97 @@
+:root {
+    color-scheme: oklch;
+    --text: oklch(0.917 0.023 95.977);
+    --text-hover : oklch(0.4065 0.0099 296.97);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    display: grid; /*on active la grille tout les enfants de bodu deviennent des objets sur lequels on peut agir avec la grille*/
+    grid-template-columns: 200px 1fr; /* la largeur de la premiere colone est de 200px et la duexieme prend la totalite de la place restante avec 1fr*/
+    grid-template-rows: 80px 1fr 60px;/*80px pour la premiere ligne (header) et 60px pour la toisieme ligne (footer) et le reste est attribuer a la deuxieme ligne*/
+    grid-template-areas: "header header" "nav main" "footer footer";/* activation de la ligne colone zone*/
+    gap: 10px;
+}
+
+header{
+    grid-area: header;
+    color: var(--text);
+    border-radius: 10px;
+}
+
+header p{
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center;     /* Centrage vertical */
+    height: 75px;
+    font-size: 2rem;
+    color: var(--text);
+    
+}
+
+nav{
+    display: flex;
+    grid-area: nav;
+    color: black; 
+    border-radius: 10px;
+    justify-content: center;
+    border: 2px solid white;
+    text-align: center;
+}
+
+main{
+    display: flex;
+    grid-area: main;
+    background: black;
+    color: var(--text);
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+footer{
+    grid-area: footer;
+    color: black;
+    border-radius: 10px;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    padding: 10px 0;
+}
+
+.article{
+    padding: 10px 15px;
+    color: var(--text);
+    border-radius: 10px;
+    flex: 1;       /*chaque article a une part egale de la hauteur total*/
+    font-size: 22px;
+    color: var(--text);
+}
+
+li{
+    margin: 10px 0px;
+    font-size: 22px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+a:hover{
+    color: var(--text-hover);
+}
+
+ul{
+    margin-left: 0px;
+    width: 100%;
+}

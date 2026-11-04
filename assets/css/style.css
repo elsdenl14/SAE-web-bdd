@@ -61,6 +61,7 @@ main{
     flex-direction: column;             /* pour emplier les articles verticalement */
     gap: 20px;
     color: var(--text);
+    font-size: 22px;
     padding: 20px;
     border-radius: 10px;
     border: 2px solid var(--border-color);

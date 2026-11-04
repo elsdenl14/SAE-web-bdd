@@ -18,17 +18,75 @@
       </ul>
     </nav>
     <main>
-      <h2>Requêtes individuelles</h2>
-      <br>
+      <h2>Requêtes individuelles (Partie III)</h2>
+
+      <!-- 1. Proposition Liam -->
       <article>
-        <p><br>Liam ELSDEN a choisi de calculer le nombre de produits avec des emballages recyclables (verre ou carton), dans le but de quantifier le nombre de ventes, 
-              et éventuellement prendre des mesures concrètes quant à l'emballage des autres produits (augmenter le nombre d'emballages recyclables par exemple)<br><br>
-                Cette requête compte d'abord le nombre de ventes au total, puis se restreint au nombre de ventes spécifiquement avec un emballage en carton ou en verre. 
-                Le résultat donne de manière détaillée à combien d'exemplaire est vendu chaque produit avec un emballage recyclable.</p>
-        <br><br>
-        <img src="assets/img/req part III liam.png" alt="requete partie 3 liam">
-        <img src="assets/img/resultat req part III liam.png" alt="resultat de la requete partie 3 liam">
+        <h3>Proposition de Liam ELSDEN : Ventes de produits avec emballages recyclables</h3>
+        <p>Liam ELSDEN a choisi de calculer le nombre de produits avec des emballages recyclables (verre ou carton), dans le but de quantifier le nombre de ventes, et éventuellement prendre des mesures concrètes quant à l'emballage des autres produits (augmenter le nombre d'emballages recyclables par exemple).</p>
+        <p>Cette requête compte d'abord le nombre de ventes au total, puis se restreint au nombre de ventes spécifiquement avec un emballage en carton ou en verre. Le résultat donne de manière détaillée à combien d'exemplaires est vendu chaque produit avec un emballage recyclable.</p>
+        <figure>
+          <img src="assets/img/requetes-part-03/liam/req part III liam.png" alt="Requête SQL de la partie 3 de Liam">
+          <figcaption>Requête SQL de Liam (emballages en carton ou verre)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/requetes-part-03/liam/resultat req part III liam.png" alt="Résultat de la requête partie 3 de Liam">
+          <figcaption>Résultat détaillé des ventes de produits à emballage recyclable</figcaption>
+        </figure>
       </article>
+
+      <!-- 2. Proposition Eliav -->
+      <article>
+        <h3>Proposition d'Eliav TORDJMANN : Identification des produits importés hors UE</h3>
+        <p>Pour ma proposition d'indicateur, j'ai choisi d'analyser l'empreinte carbone de KDou pour soutenir sa nouvelle démarche "éco-friendly". Mon objectif est de lister les produits importés hors de l'Union Européenne, avec leurs fournisseurs et pays d'origine. Cet indicateur est très utile dans notre contexte car il permet à la direction d'identifier rapidement les marchandises soumises à un transport longue distance très polluant. L'entreprise pourra ainsi décider d'optimiser son offre en cherchant des alternatives plus locales.</p>
+        <p>Pour construire cette requête, j'ai relié les tables Produit, Fournisseur et Pays à l'aide de jointures (INNER JOIN). Pour isoler les pays lointains de manière fiable, j'ai utilisé l'opérateur NOT IN avec une liste d'exclusion des principaux pays européens, ce qui évite les erreurs liées aux champs vrai/faux d'Access.</p>
+        <figure>
+          <img src="assets/img/requetes-part-03/eliav/Sa-1.04-Requete-personnelle-main/img.SQL.png" alt="Requête SQL de la partie 3 d'Eliav">
+          <figcaption>Requête SQL d'Eliav (produits importés hors UE)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/requetes-part-03/eliav/Sa-1.04-Requete-personnelle-main/img.tab.png" alt="Résultat de la requête partie 3 d'Eliav">
+          <figcaption>Liste des produits provenant de pays hors Union Européenne</figcaption>
+        </figure>
+      </article>
+
+      <!-- 3. Proposition Noé -->
+      <article>
+        <h3>Proposition de Noé-Enzo KABORÉ : Valorisation des fournisseurs français et circuits courts</h3>
+        <p>Je me suis demandé : quels sont les fournisseurs locaux (situés en France), classés par ville, et combien de produits différents fournissent-ils à KDou ?</p>
+        <p>L'idée est de pouvoir repérer facilement les partenaires de proximité pour aider KDou à privilégier les circuits courts dans sa politique d'achat.</p>
+        <p>Pour booster son image éco-responsable, KDou peut réduire les transports internationaux qui polluent beaucoup. Cet indicateur permet de voir où sont situés les fournisseurs français actuels et ce qu'ils apportent concrètement. Cela permettra de remplacer petit à petit les importations par des produits locaux.</p>
+        <p>J'ai utilisé deux jointures (INNER JOIN) pour lier les tables des pays, des fournisseurs et des produits. La clause WHERE me permet de filtrer pour ne garder que la France. Ensuite, en regroupant les données par société et par ville (GROUP BY), je peux utiliser la fonction COUNT() pour compter le nombre exact de produits par fournisseur. Enfin, le ORDER BY décroissant sert à afficher les plus gros partenaires français tout en haut de la liste.</p>
+        <figure>
+          <img src="assets/img/requetes-part-03/no-nzo/proposition-2-sql.png" alt="Requête SQL de la partie 3 de Noé-Enzo">
+          <figcaption>Requête SQL de Noé-Enzo (fournisseurs français et nombre de références)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/requetes-part-03/no-nzo/proposition-2-tab.png" alt="Résultat de la requête partie 3 de Noé-Enzo">
+          <figcaption>Classement des fournisseurs locaux situés en France</figcaption>
+        </figure>
+      </article>
+
+      <!-- 4. Proposition Lucas -->
+      <article>
+        <h3>Proposition de Lucas FERNANDES : Proximité des clients et livraisons groupées</h3>
+        <p>J'ai trouvé intéressant de faire cette requête car elle nous permet de nous rendre compte de la proximité de certains de nos clients. Cela nous permettrait donc de pouvoir grouper nos livraisons afin de réduire notre empreinte carbone, mais aussi pour les clients de réduire les frais de transport car partagés par plus de clients à la fois. De plus, cette requête est facilement aménageable pour chaque département ou zone de la France pour notre exemple.</p>
+        <figure>
+          <img src="assets/img/requetes-part-03/lucas/proposition-sql.png" alt="Requête SQL de la partie 3 de Lucas">
+          <figcaption>Requête SQL de Lucas (proximité géographique des clients)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/requetes-part-03/lucas/proposition-tab.png" alt="Résultat de la requête partie 3 de Lucas">
+          <figcaption>Résultat mettant en évidence les clients proches</figcaption>
+        </figure>
+      </article>
+
     </main>
+    <footer>
+      <p>
+        BUT1 Informatique - Groupe 107 - Année 2026-2027<br>
+        Liam ELSDEN, Lucas FERNANDES, Eliav TORDJMANN, Noé-Enzo KABORÉ
+      </p>
+    </footer>
   </body>
 </html>

@@ -1,23 +1,32 @@
+/* police google sans*/
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+
 :root {                                              /*définit les variable de couleur et la couleur de fond*/
     color-scheme: dark;
     --text: oklch(0.917 0.023 95.977);
     --text-hover : oklch(0.4065 0.0099 296.97);
+    --border-color: #555;
 }
 
 *{                          /*réinitialise toutes les marges et remplissages dans tout le fichier*/
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* pour contrôler la taille des boites */
 }
 
 body {
-    height: 100vh;                                       /*étale le body sur toute la page*/
-    font-family: Arial, sans-serif;
-    padding: 10px;
+    min-height: 100vh;
+    font-family: 'Google Sans', Arial, sans-serif;                                       /*étale le body sur toute la page*/
+    padding: 15px;
     display: grid;                                      /*activation de la grille*/
     grid-template-columns: 200px 1fr;                                          /*largeur des deux colonnes de la grille*/
     grid-template-rows: 80px 1fr 60px;                                         /*hauteur des trois lignes de la grille*/
-    grid-template-areas: "header header" "nav main" "footer footer";     /*initialisation des différentes lignes et colonnes*/
-    gap: 10px;                                                             /*espace entre les cases de la grille*/
+    grid-template-areas:                /*initialisation des différentes lignes et colonnes*/
+        "header header"
+        "nav main"
+        "footer footer";     
+    gap: 15px;
+    line-height: 1.6;   /* aérer le texte */                                                          /*espace entre les cases de la grille*/
 }
 
 header{                             /*paramètres du header*/
@@ -26,33 +35,46 @@ header{                             /*paramètres du header*/
     display: flex;              /*active la flexbox*/
     justify-content: center;    /*centrage horizontal*/
     align-items: center;        /*centrage vertical*/
+    border-bottom: 2px solid var(--border-color); /* ligne séparation */
 }
 
-header p{                          /*paramètres du texte dans le header*/
-    
-    font-size: 2rem;    
+header h1, header p {               /*paramètres du texte dans le header*/
+    font-size: 2rem;
 }
 
 nav{
     display: flex;             /*active la flexbox*/
     grid-area: nav;
+    flex-direction: column;
     border-radius: 10px;           /*arrondi de 10px*/
-    border: 2px solid white;   /*bordure blanche d'épaisseur 2px*/
-    text-align: center;        /*centre le texte*/
+    border: 2px solid var(--border-color);   /*bordure blanche d'épaisseur 2px*/
+    padding: 15px;
+    position: sticky;
+    top: 10px;
+    text-align: center;    /*centre le texte*/
+    height: fit-content;
 }
 
-main{                              /*paramètres du main*/
+main{
+    grid-area: main;                              /*paramètres du main*/
     display: flex;
-    grid-area: main;
+    flex-direction: column;             /* pour emplier les articles verticalement */
+    gap: 20px;
     color: var(--text);
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid var(--border-color);
 }
 
 footer{                             /*paramètres du footer*/
     grid-area: footer;
     color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 2px solid var(--border-color);
+    font-size: 0.9rem; /* un peu plus petit */
 }
 
 a{
@@ -63,16 +85,27 @@ a{
 }
 
 article{
-    margin: 10px 15px;         /*marge à 10px verticalement et 15px horizontalement*/   
     color: var(--text);
     font-size: 22px;
-    border: 2px solid white;
+    border: 2px solid var(--border-color);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
+}
+
+article h2, article h3 {
+    margin-bottom: 15px;          /* espace auto sous les titres de articles */
+}
+
+article p {
+    margin-bottom: 15px;     /* espace auto entre deux paragraphes */
+}
+
+nav ul {
+    list-style-type: none; /* enlève les puces de la navig */
 }
 
 nav li{
-    margin: 10px 0px;    /*marge de 10px verticalement entre chaque case*/
+    margin: 10px 0px;  
     font-size: 22px;
 }
 
@@ -82,4 +115,29 @@ a:hover{
 
 main ul{
     margin-left: 20px;   /*permet l'indentation de la liste a puces*/
+}
+
+main li {
+    margin-bottom: 10px;
+}
+
+/* gérer les figure pour les images */
+
+figure {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-style: italic;
+    color: #aaa;
 }

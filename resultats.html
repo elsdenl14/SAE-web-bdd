@@ -26,7 +26,7 @@
         <h3>QUESTION 2 : Dans une réflexion en lien avec l’origine de ses produits : On veut comme indicateur le CA total généré à ce jour avec les fournisseurs de l’UE ?</h3>
         <p>Nous avons choisi de faire la somme du chiffre d'affaires réalisé sur chaque commande provenant de l'UE, parmi toutes les commandes, grâce à plusieurs jointures, entre 'DetailCommande', 'Produit', 'Fournisseur' et 'Pays'.</p>
         <p>Grâce à cette requête on peut voir que KDou a réalisé un CA de 1 340 579€ sur les produits provenant de l'UE.</p>
-        <p><em>Remarque méthodologique :</em> Ce montant correspond à la valorisation des ventes calculée à partir du coût d'achat fournisseur (CoutAchat) déduit des remises. Pour obtenir le chiffre d'affaires facturé au prix de vente client final, il suffit d'y intégrer une jointure avec la table 'Categorie' afin de multiplier ce montant par le coefficient de marge (CoefMarge).</p>
+        <p><em>Remarque :</em> Ce montant correspond à la valorisation des ventes calculée à partir du coût d'achat fournisseur (CoutAchat) déduit des remises. Pour obtenir le chiffre d'affaires facturé au prix de vente client final, il suffit d'y intégrer une jointure avec la table 'Categorie' afin de multiplier ce montant par le coefficient de marge (CoefMarge).</p>
         <figure>
           <img src="assets/img/requetes-part-02/Q2.png" alt="requete de la question 2">
           <figcaption>Requête SQL de la question 2 (CA total UE)</figcaption>

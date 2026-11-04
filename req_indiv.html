@@ -23,7 +23,7 @@
 
       <!-- 1. Proposition Liam -->
       <article>
-        <h3>Proposition de Liam ELSDEN : Ventes de produits avec emballages recyclables</h3>
+        <h3>Proposition de Liam : Ventes de produits avec emballages recyclables</h3>
         <p>Liam ELSDEN a choisi de calculer le nombre de produits avec des emballages recyclables (verre ou carton), dans le but de quantifier le nombre de ventes, et éventuellement prendre des mesures concrètes quant à l'emballage des autres produits (augmenter le nombre d'emballages recyclables par exemple).</p>
         <p>Cette requête compte d'abord le nombre de ventes au total, puis se restreint au nombre de ventes spécifiquement avec un emballage en carton ou en verre. Le résultat donne de manière détaillée à combien d'exemplaires est vendu chaque produit avec un emballage recyclable.</p>
         <figure>
@@ -38,7 +38,7 @@
 
       <!-- 2. Proposition Eliav -->
       <article>
-        <h3>Proposition d'Eliav TORDJMANN : Identification des produits importés hors UE</h3>
+        <h3>Proposition d'Eliav : Identification des produits importés hors UE</h3>
         <p>Pour ma proposition d'indicateur, j'ai choisi d'analyser l'empreinte carbone de KDou pour soutenir sa nouvelle démarche "éco-friendly". Mon objectif est de lister les produits importés hors de l'Union Européenne, avec leurs fournisseurs et pays d'origine. Cet indicateur est très utile dans notre contexte car il permet à la direction d'identifier rapidement les marchandises soumises à un transport longue distance très polluant. L'entreprise pourra ainsi décider d'optimiser son offre en cherchant des alternatives plus locales.</p>
         <p>Pour construire cette requête, j'ai relié les tables Produit, Fournisseur et Pays à l'aide de jointures (INNER JOIN). Pour isoler les pays lointains de manière fiable, j'ai utilisé l'opérateur NOT IN avec une liste d'exclusion des principaux pays européens, ce qui évite les erreurs liées aux champs vrai/faux d'Access.</p>
         <figure>
@@ -53,7 +53,7 @@
 
       <!-- 3. Proposition Noé -->
       <article>
-        <h3>Proposition de Noé-Enzo KABORÉ : Valorisation des fournisseurs français et circuits courts</h3>
+        <h3>Proposition de Noé-Enzo : Valorisation des fournisseurs français et circuits courts</h3>
         <p>Je me suis demandé : quels sont les fournisseurs locaux (situés en France), classés par ville, et combien de produits différents fournissent-ils à KDou ?</p>
         <p>L'idée est de pouvoir repérer facilement les partenaires de proximité pour aider KDou à privilégier les circuits courts dans sa politique d'achat.</p>
         <p>Pour booster son image éco-responsable, KDou peut réduire les transports internationaux qui polluent beaucoup. Cet indicateur permet de voir où sont situés les fournisseurs français actuels et ce qu'ils apportent concrètement. Cela permettra de remplacer petit à petit les importations par des produits locaux.</p>
@@ -70,7 +70,7 @@
 
       <!-- 4. Proposition Lucas -->
       <article>
-        <h3>Proposition de Lucas FERNANDES : Proximité des clients et livraisons groupées</h3>
+        <h3>Proposition de Lucas : Proximité des clients et livraisons groupées</h3>
         <p>J'ai trouvé intéressant de faire cette requête car elle nous permet de nous rendre compte de la proximité de certains de nos clients. Cela nous permettrait donc de pouvoir grouper nos livraisons afin de réduire notre empreinte carbone, mais aussi pour les clients de réduire les frais de transport car partagés par plus de clients à la fois. De plus, cette requête est facilement aménageable pour chaque département ou zone de la France pour notre exemple.</p>
         <figure>
           <img src="assets/img/requetes-part-03/lucas/proposition-sql.png" alt="Requête SQL de la partie 3 de Lucas">

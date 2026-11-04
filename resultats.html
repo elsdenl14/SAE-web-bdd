@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Résultats</title>
+    <link rel="stylesheet" href="assets/css/style3.css" />
+  </head>
+  <body>
+    <header><h1>Compte-rendu SAÉ Base de données</h1></header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Page d'accueil</a></li>
+        <li><a href="req indiv.html">Requêtes individuelles au choix</a></li>
+        <li><a href="synthese.html">Synthèse</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Résultats des requêtes collectives</h2>
+      <br>
+      <article>
+        <h3>QUESTION 2 : Dans une réflexion en lien avec l’origine de ses produits : On veut comme indicateur le CA
+               total généré à ce jour avec les fournisseurs de l’UE ?</h3>
+        <p><br>Nous avons choisi de faire la somme du chiffre d'affaires réalisé sur chaque commande provenant de l'UE, parmi toutes les commandes, 
+               grâce à plusieurs jointures, entre 'DetailCommande', 'Produit', 'Fournisseur' et 'Pays'.<br>
+                Grâce à cette requête on peut voir que KDou a réalisé un CA de 1 340 579€ sur les produits provenant de l'UE.</p>
+        <br><br>
+        <img src="assets/img/Q2.png" alt="requete de la question 2">
+        <img src="assets/img/resultat Q2.png" alt="resultat de la requete de la question 2">
+        <p><br><br>Afin de vérifier nos propos, nous avons testé une requête presque identique, 
+               mais avec un GROUP BY pour visualiser le CA réalisé en fonction des pays d'origine des produits.</p>
+        <br><br>
+        <img src="assets/img/Q2 bis.png" alt="requete de la verification de la question 2">
+        <img src="assets/img/resultat Q2 bis.png" alt="resultat de la requete de la verification de la question 2">
+      </article>
+
+      <article>
+        <h3>QUESTION 3 : Dans une réflexion en lien avec la santé : On veut comme indicateur le chiffre d’affaire
+            généré (montant total des ventes) annuel pour les catégories desserts ou boissons.</h3>
+        <p><br>Pour ce faire on a récupéré l'année de chaque commande, puis calculé le CA total, à l'image de la question précédente, 
+                sauf que les jointures ici sont différentes car nous ne cherchons pas la même chose. Afin d'afficher le résultat en fonction de chaque année, 
+                on a regroupé chaque année ensemble, de sorte à avoir le CA de 2020,2021 et 2022.<br>
+                Grâce à cette requête on peut voir que KDou a généré un CA de 79838€ en 2020, 672808€ en 2021, et 770€ en 2022, 
+                le tout dans les catégories desserts et boissons.</p>
+        <br><br>
+        <img src="assets/img/Q3.png" alt="requete de la question 3">
+        <img src="assets/img/resultat Q3.png" alt="resultat de la requete de la question 3">
+        <p><br><br>Afin de vérifier nos propos, nous avons testé une requête presque identique, mais avec un autre GROUP BY pour visualiser le CA réalisé 
+                  en fonction des années mais également en fonction des catégories de produits.</p>
+        <br><br>
+        <img src="assets/img/Q3 bis.png" alt="requete de la verification de la question 3">
+        <img src="assets/img/resultat Q3 bis.png" alt="resultat de la requete de la verification de la question 3">
+      </article>
+
+      <article>
+        <h3>QUESTION 4 : Dans une réflexion en lien avec l’offre commerciale : Calcul de l’indicateur nombre de
+            produits carnés non commandés actuellement ?</h3>
+        <p><br>Pour cette requête-ci nous avons compté le nombre de produits catégorisés comme contenant de la viande, 
+              puis nous avons inclus la condition comme quoi les produits qu'on souhaitait afficher ne soient pas présent dans la table 'DetailCommande', 
+              autrement dit, qu'ils n'aient jamais été commandés.<br>
+                Grâce à notre requête on observe que seulement deux produits carnés différents n'ont jamais été commandés.</p>
+        <br><br>
+        <img src="assets/img/Q4.png" alt="requete de la question 4">
+        <img src="assets/img/resultat Q4.png" alt="resultat de la requete de la question 4">
+        <p><br><br>Afin de vérifier nos propos, nous avons testé une requête presque identique, 
+                  mais avec un GROUP BY pour visualiser le nom de chaque produit carné jamais commandé.</p>
+        <br><br>
+        <img src="assets/img/Q4 bis.png" alt="requete de la verification de la question 4">
+        <img src="assets/img/resultat Q4 bis.png" alt="resultat de la requete de la verification de la question 4">
+      </article>
+
+      <article>
+        <h3>QUESTION 5 : Dans une réflexion sur le partenariat client : A-t-on des clients pilotes d’un réseau
+            partenaire ayant autant de commandes que les clients partenaires ?</h3>
+        <p><br>Pour répondre à cette ultime question, nous avons regardé parmi tous les clients pilotes qui avaient un client partenaire, par la suite, 
+              nous avons vérifié si le nombre de commandes des clients pilotes était compris dans la liste des nombres de commandes réalisées par les clients partenaires.<br>
+                Ici, seulement un seul client pilote a le même nombre de commandes que son client partenaire associé, il s'agit du client ISAEP, 
+                avec un total de 17 commandes, qui tient la société 'Petite Épicerie'</p>
+        <br><br>
+        <img src="assets/img/Q5.png" alt="requete de la question 5">
+        <img src="assets/img/resultat Q5.png" alt="resultat de la requete de la question 5">
+      </article>
+    </main>
+  </body>
+</html>
